@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello</title>
+</head>
+<body>
+    <div>
+        {% if users|length > 1 %}
+            <p>Hello, there are {% for user in users %} {{user}}{% if not loop.last %},{% endif %}{% endfor %}.</p>
+        {% elif users|length == 0 %}
+            <p>The room is full of people who care…</p>
+        {% elif users|length == 1 %}
+            <p>Hello, there is {% for user in users %} {{user}}. {% endfor %}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
